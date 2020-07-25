@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Audiowide|Josefin+Sans:100|Rambla&display=swap');
+
+
+body {
+  color: #283655;
+  background-color: #f7faff;
+  font-family: 'Rambla', sans-serif;
+  overflow: hidden;
+}
+h2, h3 {
+  font-family: 'Audiowide', sans-serif;
+  letter-spacing: 0.8em;
+  text-transform: uppercase;
+  text-shadow: -1px -1px 1px #283655;
+}
+li {
+  list-style-type: none;
+}
+img {
+  width: 100%;
+}
