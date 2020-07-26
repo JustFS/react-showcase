@@ -1,0 +1,36 @@
+.scroll-bottom {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: $color-4;
+  font-size: 1.7rem;
+  perspective: 40px;
+
+  .sb-main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 150px;
+    transition: 0.4s;
+    transform: rotateX(25deg) scaleY(0.8);
+    transform-origin: bottom;
+
+    &:hover {
+      transform: rotateX(0deg) scaleY(1);
+    }
+    span {
+      font-size: 1.5rem;
+      padding: 0 1rem;
+      transition: 0.3s;
+      display: inline-block;
+      transform: translateY(-1px);
+
+      &:hover {
+        color: black;
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

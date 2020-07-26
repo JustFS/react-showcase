@@ -1,0 +1,31 @@
+@font-face {
+  font-family: 'font-1';
+  src: url(../assets/fonts/Questrial-Regular.ttf);
+}
+
+$font-1: 'font-1';
+
+$color-1: #fafcff;
+$color-2: #00C1EC;
+$color-3: #E7F7FE;
+$color-4: rgb(141, 141, 141);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style-type: none;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+a, a:visited {
+  color: $color-4;
+}
+body {
+  font-family: $font-1;
+  height: 100vh;
+  background-color: $color-1;
+  overflow: hidden;
+}
+

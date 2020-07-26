@@ -8,6 +8,7 @@ import Project4 from './pages/Project4';
 import Contact from './pages/Contact';
 import NotFound from './pages/NotFound';
 
+import { AnimatePresence } from 'framer-motion';
 
 export default class componentName extends React.Component {
   constructor(props, context) {
@@ -18,7 +19,6 @@ export default class componentName extends React.Component {
   componentDidMount() {
     window.addEventListener('wheel', this.handleScrollToElement);
   }
-
   componentWillUnmount() {
     window.removeEventListener('wheel', this.handleScrollToElement);
   }
@@ -33,32 +33,40 @@ export default class componentName extends React.Component {
         window.location.href = url + before;
       }
     }
-    switch (window.location.href){
-      case url + '/':
-        wheelRouter('/projet-1', '/');
-        break;
-      case url + '/projet-1':
-        wheelRouter('/projet-2', "/");
-        break;
-      case url + '/projet-2':
-        wheelRouter('/projet-3', '/projet-1');
-        break;    
-      case url + '/projet-3':
-        wheelRouter('/projet-4', '/projet-2');
-        break;  
-      case url + '/projet-4':
-        wheelRouter('/contact', '/projet-3');
-        break;
-      case url + '/contact':
-        wheelRouter('/contact', '/projet-4');
-        break;
-      default:
-        console.log('nothing');
-    }
+
+    setTimeout(() => {
+      switch (window.location.href){
+        case url + '/':
+          if (e.wheelDeltaY < 0){
+            window.location.href = url + '/projet-1';
+          }
+          break;
+        case url + '/projet-1':
+          wheelRouter('/projet-2', "/");
+          break;
+        case url + '/projet-2':
+          wheelRouter('/projet-3', '/projet-1');
+          break;    
+        case url + '/projet-3':
+          wheelRouter('/projet-4', '/projet-2');
+          break;  
+        case url + '/projet-4':
+          wheelRouter('/contact', '/projet-3');
+          break;
+        case url + '/contact':
+          if (e.wheelDeltaY > 0){
+            window.location.href = url + '/projet-4';
+          }
+          break;
+        default:
+          console.log('nothing');
+        }
+    }, 250);
   }
 
   render() {
     return ( 
+      <AnimatePresence>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/projet-1" component={Project1} />
@@ -68,6 +76,7 @@ export default class componentName extends React.Component {
         <Route path="/contact" component={Contact} />
         <Route component={NotFound} />
       </Switch>
+      </AnimatePresence>
     );
   }
 };

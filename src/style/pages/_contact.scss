@@ -1,0 +1,67 @@
+.contact {
+  &:after {
+    content: "";
+    height: 1000px;
+    width: 1000px;
+    background: $color-3;
+    border-radius: 50%;
+    position: absolute;
+    top: 110px;
+    right: -460px;
+    z-index: -1;
+  }
+
+  .contact-form {
+    margin: 17% 0 0 17%;
+    max-width: 50%;
+  }
+  .contact-infos {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: grid;
+    grid-template-rows: repeat(4, 23%) 12%;
+    height: 70%;
+    width: 30%;
+    max-width: 500px;
+
+    h4 {
+      color: $color-4;
+      font-size: 1.3rem;
+      font-weight: 200;
+      margin-bottom: 10px;
+    }
+
+    .address {
+      position: relative;
+
+      .content {
+        position: absolute;
+        right: 10px;
+      }
+    }
+    .phone {
+      position: relative;
+
+      .content {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .social-network {
+      position: relative;
+      width: 80%;
+      margin: 0 auto;
+
+      .content {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    .credits {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,14 @@
+.social-network {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 20%;
+  font-size: 1.2rem;
+
+  ul {
+    display: flex;
+    width: 100%;
+    min-width: 100px;
+    justify-content: space-around;
+  }
+}

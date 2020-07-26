@@ -1,0 +1,51 @@
+.home {
+  height: 100vh;
+
+  &:after {
+    content: '';
+    height: 700px;
+    width: 700px;
+    background: $color-3;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -480px;
+    right: 0px;
+    z-index: -1;
+  }
+
+  .home-main {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    height: 95%;
+
+    .main-content {
+      user-select: none;
+
+      h1 {
+        font-size: 5rem;
+        position: relative;
+
+        &:before {
+          content: '';
+          position: absolute;
+          height: 225px;
+          width: 225px;
+          border-radius: 50%;
+          border: 1px $color-2 solid;
+          top: -40px;
+          left: -180px;
+          z-index: -1;
+        }
+      }
+      h2 {
+        font-size: 3.5rem;
+        font-weight: 100;
+
+        span {
+          color: $color-2;
+        }
+      }
+    }
+  }
+}

@@ -1,12 +1,40 @@
-import React from 'react';
-import Navigation from '../components/Navigation';
+import React from "react";
+import Navigation from "../components/Navigation";
+import ButtonsBottom from "../components/ButtonsBottom";
+import ContactForm from "../components/ContactForm";
+import SocialNetwork from "../components/SocialNetwork";
 
 const Contact = () => {
   return (
-    <div>
+    <div className="contact">
       <Navigation />
-      <h2>Contact</h2>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consectetur veniam, laudantium aut totam quos facilis ad sapiente deleniti doloribus suscipit, reprehenderit iusto nulla dolor sunt explicabo omnis cum ex labore unde, numquam sint eaque dolores. Incidunt, eligendi totam. Consequuntur possimus natus maxime maiores consequatur, accusamus ea necessitatibus adipisci exercitationem recusandae?</p>
+      <ContactForm />
+      <div className="contact-infos">
+        <div className="address">
+          <div className="content">
+            <h4>adresse</h4>
+            <p>12 rue Laplace</p>
+            <p>33700 Mérignac</p>
+          </div>
+        </div>
+        <div className="phone">
+          <div className="content">
+            <h4>téléphone</h4>
+            <p>05 42 84 42 84</p>
+          </div>
+        </div>
+        <div className="email">
+          <div className="content">
+            <h4>email</h4>
+            <p>azagancy@gmail.com</p>
+          </div>
+        </div>
+        <SocialNetwork />
+        <div className="credits">
+          <p>j.azambourg - 2020</p>
+        </div>
+      </div>
+      <ButtonsBottom left={"/projet-4"} />
     </div>
   );
 };
