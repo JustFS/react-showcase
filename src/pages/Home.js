@@ -10,7 +10,7 @@ const Home = () => {
       <SocialNetwork />
       <div className="home-main">
         <div className="main-content">
-          <h1>AZ AGENCY</h1>
+          <h1><span>AZ</span> AGENCY</h1>
           <h2>simply <span>simple</span></h2>
         </div>
       </div>

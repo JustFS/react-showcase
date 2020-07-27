@@ -6,6 +6,7 @@
   color: $color-4;
   font-size: 1.7rem;
   perspective: 40px;
+  user-select: none;
 
   .sb-main {
     display: grid;

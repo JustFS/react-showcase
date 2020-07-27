@@ -3,11 +3,13 @@ import Navigation from "../components/Navigation";
 import ButtonsBottom from "../components/ButtonsBottom";
 import ContactForm from "../components/ContactForm";
 import SocialNetwork from "../components/SocialNetwork";
+import Logo from "../components/Logo";
 
 const Contact = () => {
   return (
     <div className="contact">
       <Navigation />
+      <Logo />
       <ContactForm />
       <div className="contact-infos">
         <div className="address">

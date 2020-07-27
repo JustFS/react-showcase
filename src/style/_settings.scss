@@ -2,8 +2,11 @@
   font-family: 'font-1';
   src: url(../assets/fonts/Questrial-Regular.ttf);
 }
+@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Michroma&display=swap');
 
-$font-1: 'font-1';
+
+$font-1: 'font-1', sans-serif;
+$font-2: 'Michroma', serif;
 
 $color-1: #fafcff;
 $color-2: #00C1EC;
@@ -28,4 +31,18 @@ body {
   background-color: $color-1;
   overflow: hidden;
 }
+.button {
+  background: $color-3;
+  height: 55px;
+  width: 126px;
+  border-radius: 50px;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: .2s;
 
+  &:hover {
+    letter-spacing: 1px;
+    color: $color-2;
+  }
+}

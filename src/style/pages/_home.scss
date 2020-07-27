@@ -23,8 +23,9 @@
       user-select: none;
 
       h1 {
-        font-size: 5rem;
+        font-size: 3.3rem;
         position: relative;
+        font-family: $font-2;
 
         &:before {
           content: '';

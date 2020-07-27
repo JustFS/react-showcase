@@ -81,7 +81,7 @@ export default class extends Component {
             name="name"
             required
             onChange={this.handleNameChange}
-            placeholder="Nom"
+            placeholder="nom"
             value={this.state.name}
           />
           <input
@@ -90,7 +90,7 @@ export default class extends Component {
             name="company"
             required
             onChange={this.handleCompanyChange}
-            placeholder="Société"
+            placeholder="société"
             value={this.state.company}
           />
           <input
@@ -99,7 +99,7 @@ export default class extends Component {
             name="phone"
             required
             onChange={this.handlePhoneChange}
-            placeholder="Téléphone"
+            placeholder="téléphone"
             value={this.state.phone}
           />
           <input
@@ -108,19 +108,19 @@ export default class extends Component {
             name="email"
             required
             onChange={this.handleEmailChange}
-            placeholder="Email"
+            placeholder="email"
             value={this.state.email}
           />
           <textarea
             id="message"
             name="message"
             onChange={this.handleMessageChange}
-            placeholder="Post some lorem ipsum here"
+            placeholder="message..."
             required
             value={this.state.message}
           />
         </div>
-        <input type="button" value="Submit" onClick={this.handleSubmit} />
+        <input className="button" type="button" value="envoyer" onClick={this.handleSubmit} />
       </form>
     );
   }

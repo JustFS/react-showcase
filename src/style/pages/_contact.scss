@@ -10,10 +10,53 @@
     right: -460px;
     z-index: -1;
   }
+  .logo {
+    top: 8px;
+    right: 1rem;
+  }
 
   .contact-form {
     margin: 17% 0 0 17%;
     max-width: 50%;
+    position: relative;
+    max-width: 350px;
+
+    h2 {
+      margin-bottom: 20px;
+
+      &:after {
+        content: "";
+        height: 70px;
+        width: 70px;
+        border: 1px $color-2 solid;
+        border-radius: 50%;
+        position: absolute;
+        top: -22px;
+        left: 133px;
+        z-index: -1;
+      }
+    }
+
+    .form-content {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr) 100px;
+
+      input, 
+      textarea {
+        background: none;
+        font-family: $font-1;
+        font-size: 1.2rem;
+        border-bottom: 1px solid $color-2;
+      }
+      input {
+        padding: 24px 0 12px;
+      }
+      textarea {
+        resize: none;
+        padding: 24px 0;
+
+      }
+    }
   }
   .contact-infos {
     position: absolute;
@@ -45,7 +88,7 @@
 
       .content {
         position: absolute;
-        left: 50%;
+        left: 40%;
         transform: translateX(-50%);
       }
     }

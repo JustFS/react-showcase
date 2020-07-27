@@ -1,12 +1,15 @@
 import React from 'react';
 import Navigation from '../components/Navigation';
 import ButtonsBottom from '../components/ButtonsBottom';
+import Logo from '../components/Logo';
+import Project from '../components/Project';
 
 const Project4 = () => {
   return (
-    <div>
+    <div className="project">
       <Navigation />
-      <h3>Projet 4</h3>
+      <Logo />
+      <Project projectNumber={3} />
       <ButtonsBottom left={'/projet-3'} right={'/contact'} />
     </div>
   );
