@@ -18,13 +18,13 @@
     z-index: -1;
   }
   .nav-active {
-    color: black;
+    color: $black;
   }
   ul:hover li:not(:hover) {
     opacity: .5;
   }
   ul:hover li:hover {
-    color: black;
+    color: $black;
   }
 
   .nav-portfolio {

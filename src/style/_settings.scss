@@ -1,17 +1,20 @@
 @font-face {
-  font-family: 'font-1';
+  font-family: "font-1";
   src: url(../assets/fonts/Questrial-Regular.ttf);
 }
-@import url('https://fonts.googleapis.com/css2?family=Capriola&family=Michroma&display=swap');
+@font-face {
+  font-family: "font-2";
+  src: url(../assets/fonts/Michroma-Regular.ttf);
+}
 
-
-$font-1: 'font-1', sans-serif;
-$font-2: 'Michroma', serif;
+$font-1: "font-1", sans-serif;
+$font-2: "font-2", serif;
 
 $color-1: #fafcff;
-$color-2: #00C1EC;
-$color-3: #E7F7FE;
+$color-2: #00c1ec;
+$color-3: #e7f7fe;
 $color-4: rgb(141, 141, 141);
+$black: rgb(40, 40, 40);
 
 * {
   margin: 0;
@@ -21,16 +24,53 @@ $color-4: rgb(141, 141, 141);
   outline: none;
   border: none;
   text-decoration: none;
+
+  &::selection {
+    color: $color-1;
+    background: $color-2;
+  }
 }
-a, a:visited {
+a,
+a:visited {
   color: $color-4;
 }
 body {
   font-family: $font-1;
   height: 100vh;
   background-color: $color-1;
+  color: $black;
   overflow: hidden;
 }
+
+.cursor {
+  width: 60px;
+  height: 60px;
+  border: 1px solid $color-2;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.5s ease;
+  transition-property: background, transform;
+  transition: top 160ms ease-out;
+  transition: left 160ms ease-out;
+  z-index: 2;
+  backdrop-filter: brightness(120%);
+
+  .link-grow {
+    transform: scale(1.5) translate(-25%, -25%);
+    background: #222;
+    opacity: 0.9;
+    z-index: 2;
+  }
+  .hovered-link {
+    color: white;
+    transition: 0.3s ease-out;
+    z-index: 3;
+  }
+}
+
+
 .button {
   background: $color-3;
   height: 55px;
@@ -39,7 +79,7 @@ body {
   margin-top: 20px;
   font-size: 1.2rem;
   cursor: pointer;
-  transition: .2s;
+  transition: 0.2s;
 
   &:hover {
     letter-spacing: 1px;

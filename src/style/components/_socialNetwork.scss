@@ -1,7 +1,7 @@
 .social-network {
   position: absolute;
   right: 1rem;
-  top: 1rem;
+  top: 0;
   width: 20%;
   font-size: 1.2rem;
 
@@ -10,5 +10,19 @@
     width: 100%;
     min-width: 100px;
     justify-content: space-around;
+
+    a {
+      padding: 1rem 1rem 3rem;
+
+      &:nth-child(1){
+        padding-left: 3rem;
+      }
+      &:nth-child(2){
+        padding: 1rem 3rem;
+      }
+      &:nth-child(3){
+        padding-right: 3rem;
+      }
+    }
   }
 }
