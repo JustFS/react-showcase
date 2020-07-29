@@ -12,17 +12,8 @@
     justify-content: space-around;
 
     a {
-      padding: 1rem 1rem 3rem;
-
-      &:nth-child(1){
-        padding-left: 3rem;
-      }
-      &:nth-child(2){
-        padding: 1rem 3rem;
-      }
-      &:nth-child(3){
-        padding-right: 3rem;
-      }
+      padding: 1rem;
+      transition: 1.1s ease-out;
     }
   }
 }

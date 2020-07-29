@@ -8,10 +8,12 @@
     "@testing-library/user-event": "^7.1.2",
     "emailjs-com": "^2.6.3",
     "framer-motion": "^2.1.4",
+    "gsap": "^3.4.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.1",
+    "react-transition-group": "^4.4.1",
     "websocket-extensions": "^0.1.4"
   },
   "scripts": {

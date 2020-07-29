@@ -38,22 +38,49 @@ export default class extends Component {
   handleSubmit(e) {
     e.preventDefault();
     console.log(this.state);
-    const templateId = "template_aofmtvBG";
 
-    this.sendFeedback(templateId, {
-      name: this.state.name,
-      company: this.state.company,
-      phone: this.state.phone,
-      email: this.state.email,
-      message: this.state.message,
-    });
+    let {name, company, phone, email, message} = this.state;
+
+    if (name && email && message){
+      const templateId = "template_aofmtvBG";
+
+      document.getElementById('name').classList.remove('red');
+      document.getElementById('email').classList.remove('red');
+      document.getElementById('message').classList.remove('red');
+
+      this.sendFeedback(templateId, {
+        name,
+        company,
+        phone,
+        email,
+        message,
+      });
+    } else {
+      console.log('mal rempli');
+      document.querySelector('.form-message').innerHTML = "Merci de remplir correctement les champs requis *";
+      document.querySelector('.form-message').style.background = 'rgb(253, 87, 87)';
+      document.querySelector('.form-message').style.opacity = '1';
+
+      if (!name) {
+        document.getElementById('name').classList.add('error');
+      }
+      if (!email) {
+        document.getElementById('email').classList.add('error');
+      }
+      if (!message) {
+        document.getElementById('message').classList.add('error');
+      }
+    }
   }
 
   sendFeedback(templateId, variables) {
     window.emailjs
       .send("gmail", templateId, variables)
       .then((res) => {
-        console.log("Email successfully sent!");
+        document.querySelector('.form-message').innerHTML = "Message envoyé ! Nous vous recontacterons dès que possible.";
+        document.querySelector('.form-message').style.background = '#00c1ec';
+        document.querySelector('.form-message').style.opacity = '1';
+
         this.setState({
           name: "",
           company: "",
@@ -61,12 +88,12 @@ export default class extends Component {
           email: "",
           message: "",
         });
+        setTimeout(() => {
+          document.querySelector('.form-message').style.opacity = '0';
+        }, 4500);
       })
       .catch((err) =>
-        console.error(
-          "Oh well, you failed. Here some thoughts on the error that occured:",
-          err
-        )
+        document.querySelector('.form-message').innerHTML = "Une erreur s'est produite, veuillez réessayer."
       );
   }
 
@@ -81,14 +108,13 @@ export default class extends Component {
             name="name"
             required
             onChange={this.handleNameChange}
-            placeholder="nom"
+            placeholder="nom *"
             value={this.state.name}
           />
           <input
             type="text"
             id="company"
             name="company"
-            required
             onChange={this.handleCompanyChange}
             placeholder="société"
             value={this.state.company}
@@ -97,7 +123,6 @@ export default class extends Component {
             type="text"
             id="phone"
             name="phone"
-            required
             onChange={this.handlePhoneChange}
             placeholder="téléphone"
             value={this.state.phone}
@@ -108,19 +133,20 @@ export default class extends Component {
             name="email"
             required
             onChange={this.handleEmailChange}
-            placeholder="email"
+            placeholder="email *"
             value={this.state.email}
           />
           <textarea
             id="message"
             name="message"
             onChange={this.handleMessageChange}
-            placeholder="message..."
+            placeholder="message *"
             required
             value={this.state.message}
           />
         </div>
         <input className="button" type="button" value="envoyer" onClick={this.handleSubmit} />
+        <div className="form-message"></div>
       </form>
     );
   }

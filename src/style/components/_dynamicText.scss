@@ -1,0 +1,45 @@
+.dynamic-text {
+  position: relative;
+  animation: color 50s infinite alternate;
+
+  span {
+    position: absolute;
+    left: 1rem;
+    transform: translateY(20px);
+    opacity: 0;
+
+    @mixin word ($delay) {
+      animation: animWord 16s infinite;
+      animation-delay: $delay;
+      @keyframes animWord {
+        25% {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        32% {
+          transform: translateY(-20px);
+          opacity: 0;
+        }
+      } 
+    }
+
+    &:nth-child(1){
+      @include word(0s);
+    }
+    &:nth-child(2){
+      @include word(4s);
+    }
+    &:nth-child(3){
+      @include word(8s);
+    }
+    &:nth-child(4){
+      @include word(12s);
+    }
+  }
+}
+
+@keyframes color {
+  0% {color: $color-2;}
+  50% {color: #ec006e;}
+  100% {color: $color-2;}
+}

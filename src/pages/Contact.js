@@ -6,6 +6,7 @@ import SocialNetwork from "../components/SocialNetwork";
 import Logo from "../components/Logo";
 
 const Contact = () => {
+
   return (
     <div className="contact">
       <Navigation />
@@ -28,7 +29,7 @@ const Contact = () => {
         <div className="email">
           <div className="content">
             <h4>email</h4>
-            <p>azagancy@gmail.com</p>
+            <p>azagency@gmail.com</p>
           </div>
         </div>
         <SocialNetwork />
