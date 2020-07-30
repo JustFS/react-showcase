@@ -10,43 +10,43 @@ export default class extends Component {
       email: "",
       message: "",
     };
-
-    this.handleNameChange = this.handleNameChange.bind(this);
-    this.handleCompanyChange = this.handleCompanyChange.bind(this);
-    this.handlePhoneChange = this.handlePhoneChange.bind(this);
-    this.handleEmailChange = this.handleEmailChange.bind(this);
-    this.handleMessageChange = this.handleMessageChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleNameChange(e) {
-    this.setState({ name: e.target.value });
-  }
-  handleCompanyChange(e) {
-    this.setState({ company: e.target.value });
-  }
-  handlePhoneChange(e) {
-    this.setState({ phone: e.target.value });
-  }
-  handleEmailChange(e) {
-    this.setState({ email: e.target.value });
-  }
-  handleMessageChange(e) {
-    this.setState({ message: e.target.value });
+  handleChange(e) {
+    this.setState({ [e.target.name] : e.target.value})
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    console.log(this.state);
-
     let {name, company, phone, email, message} = this.state;
+    let nameS = document.getElementById('name');
+    let emailS = document.getElementById('email');
+    let messageS = document.getElementById('message');
+    let formMess = document.querySelector('.form-message');
 
-    if (name && email && message){
+    const isEmail = () => {
+      let isMail = document.getElementById('not-mail')
+      let regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+
+      if(email.match(regex)) {
+        isMail.style.display = 'none';
+        return true;
+      } else {
+        isMail.style.display = 'block';
+        isMail.style.animation = 'dongle 1s';
+        setTimeout(() => {
+          isMail.style.animation = 'none';
+        }, 1000);
+        return false;
+      }
+    }
+
+    if (name && isEmail() && message){
       const templateId = "template_aofmtvBG";
 
-      document.getElementById('name').classList.remove('red');
-      document.getElementById('email').classList.remove('red');
-      document.getElementById('message').classList.remove('red');
+      nameS.classList.remove('red');
+      emailS.classList.remove('red');
+      messageS.classList.remove('red');
 
       this.sendFeedback(templateId, {
         name,
@@ -56,30 +56,35 @@ export default class extends Component {
         message,
       });
     } else {
-      console.log('mal rempli');
-      document.querySelector('.form-message').innerHTML = "Merci de remplir correctement les champs requis *";
-      document.querySelector('.form-message').style.background = 'rgb(253, 87, 87)';
-      document.querySelector('.form-message').style.opacity = '1';
+      formMess.innerHTML = "Merci de remplir correctement les champs requis *";
+      formMess.style.background = 'rgb(253, 87, 87)';
+      formMess.style.opacity = '1';
 
       if (!name) {
-        document.getElementById('name').classList.add('error');
+        nameS.classList.add('error');
       }
       if (!email) {
-        document.getElementById('email').classList.add('error');
+        emailS.classList.add('error');
       }
       if (!message) {
-        document.getElementById('message').classList.add('error');
+        messageS.classList.add('error');
       }
     }
   }
 
   sendFeedback(templateId, variables) {
+    let formMess = document.querySelector('.form-message');
+
     window.emailjs
       .send("gmail", templateId, variables)
       .then((res) => {
-        document.querySelector('.form-message').innerHTML = "Message envoyé ! Nous vous recontacterons dès que possible.";
-        document.querySelector('.form-message').style.background = '#00c1ec';
-        document.querySelector('.form-message').style.opacity = '1';
+        formMess.innerHTML = "Message envoyé ! Nous vous recontacterons dès que possible.";
+        formMess.style.background = '#00c1ec';
+        formMess.style.opacity = '1';
+
+        document.getElementById('name').classList.remove('error');
+        document.getElementById('email').classList.remove('error');
+        document.getElementById('message').classList.remove('error');
 
         this.setState({
           name: "",
@@ -89,11 +94,11 @@ export default class extends Component {
           message: "",
         });
         setTimeout(() => {
-          document.querySelector('.form-message').style.opacity = '0';
-        }, 4500);
+          formMess.style.opacity = '0';
+        }, 5000);
       })
       .catch((err) =>
-        document.querySelector('.form-message').innerHTML = "Une erreur s'est produite, veuillez réessayer."
+        formMess.innerHTML = "Une erreur s'est produite, veuillez réessayer."
       );
   }
 
@@ -107,7 +112,7 @@ export default class extends Component {
             id="name"
             name="name"
             required
-            onChange={this.handleNameChange}
+            onChange={this.handleChange.bind(this)}
             placeholder="nom *"
             value={this.state.name}
           />
@@ -115,7 +120,7 @@ export default class extends Component {
             type="text"
             id="company"
             name="company"
-            onChange={this.handleCompanyChange}
+            onChange={this.handleChange.bind(this)}
             placeholder="société"
             value={this.state.company}
           />
@@ -123,29 +128,32 @@ export default class extends Component {
             type="text"
             id="phone"
             name="phone"
-            onChange={this.handlePhoneChange}
+            onChange={this.handleChange.bind(this)}
             placeholder="téléphone"
             value={this.state.phone}
           />
-          <input
-            type="mail"
-            id="email"
-            name="email"
-            required
-            onChange={this.handleEmailChange}
-            placeholder="email *"
-            value={this.state.email}
-          />
+          <div className="email-content">
+            <label id="not-mail">Email non valide</label>
+            <input
+              type="mail"
+              id="email"
+              name="email"
+              required
+              onChange={this.handleChange.bind(this)}
+              placeholder="email *"
+              value={this.state.email}
+            />
+          </div>
           <textarea
             id="message"
             name="message"
-            onChange={this.handleMessageChange}
+            onChange={this.handleChange.bind(this)}
             placeholder="message *"
             required
             value={this.state.message}
           />
         </div>
-        <input className="button" type="button" value="envoyer" onClick={this.handleSubmit} />
+        <input className="button" type="button" value="envoyer" onClick={this.handleSubmit.bind(this)} />
         <div className="form-message"></div>
       </form>
     );

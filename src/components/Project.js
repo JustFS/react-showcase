@@ -5,10 +5,14 @@ class Project extends Component {
   state = {
     project:projectsData
   }
-
+  
   render() {
     let projectNumber = this.props.projectNumber;
     let project = this.state.project[projectNumber];
+
+    let left = Math.floor((Math.random() * 200) + 600) + 'px';
+    let top = Math.floor((Math.random() * 200) + 150) + 'px';
+    let size = 'scale(' + (Math.random() + 0.7) +')';
 
     return (
       <div className="project-main">
@@ -35,6 +39,7 @@ class Project extends Component {
             <div className="button">voir le site</div>
           </a>
         </div>
+        <span className="random-circle" style={{left: left, top: top, transform: size }}></span>
       </div>
     );
   }

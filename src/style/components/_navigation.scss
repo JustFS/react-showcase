@@ -16,6 +16,16 @@
     top: -150px;
     left: -160px;
     z-index: -1;
+    animation: navAnim 20s infinite alternate;
+
+    @keyframes navAnim {
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
   }
   .nav-active {
     color: $black;

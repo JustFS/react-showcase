@@ -8,12 +8,17 @@ class Mouse extends Component {
     // circle smaller
     document.querySelectorAll("body a").forEach(link => {
       link.addEventListener('mouseover', this.handleHover);
-      link.addEventListener('mouseleave', this.handleLeave);
+      link.addEventListener('mouseleave', this.handleLeave);      
     });
   }
 
   componentWillUnmount() {
     window.removeEventListener('mousemove', this.handleCursor);
+
+    document.querySelectorAll("body a").forEach(link => {
+      link.removeEventListener('click', this.handleLeave);
+      
+    });
   }
   handleCursor(e) {
     document.querySelector(".cursor").style.top = e.pageY + 'px';

@@ -140,4 +140,22 @@
       }
     }
   }
+  .random-circle {
+    position: absolute;
+    height: 300px;
+    width: 300px;
+    background: $color-3;
+    border-radius: 50%;
+    z-index: -1;
+    animation: circleAnim 20s infinite alternate;
+
+    @keyframes circleAnim {
+      50% {
+        transform: scale(1.5);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+  }
 }

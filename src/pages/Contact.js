@@ -4,6 +4,7 @@ import ButtonsBottom from "../components/ButtonsBottom";
 import ContactForm from "../components/ContactForm";
 import SocialNetwork from "../components/SocialNetwork";
 import Logo from "../components/Logo";
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 const Contact = () => {
 
@@ -23,13 +24,21 @@ const Contact = () => {
         <div className="phone">
           <div className="content">
             <h4>téléphone</h4>
-            <p>05 42 84 42 84</p>
+            <CopyToClipboard text="0642844284">
+              <p className="clipboard" onClick={() => {alert("Téléphone copié !")}}>
+                06 42 84 42 84
+              </p>
+            </CopyToClipboard>
           </div>
         </div>
         <div className="email">
           <div className="content">
             <h4>email</h4>
-            <p>azagency@gmail.com</p>
+            <CopyToClipboard text="azagency@gmail.com">
+              <p className="clipboard" onClick={() => {alert("Email copié !")}}>
+                azagency@gmail.com
+              </p>
+            </CopyToClipboard>
           </div>
         </div>
         <SocialNetwork />

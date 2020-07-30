@@ -11,6 +11,16 @@
     bottom: -480px;
     right: 0px;
     z-index: -1;
+    animation: homeAnim 40s infinite alternate;
+
+    @keyframes homeAnim {
+      50% {
+        transform: scale(0.8);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
   }
 
   .home-main {
