@@ -10,7 +10,7 @@
 $font-1: "font-1", sans-serif;
 $font-2: "font-2", serif;
 
-$color-1: #fafcff;
+$color-1: #fafeff;
 $color-2: #00c1ec;
 $color-3: #e7f7fe;
 $color-4: rgb(141, 141, 141);
@@ -41,6 +41,9 @@ body {
   background-color: $color-1;
   color: $black;
   overflow: hidden;
+}
+main {
+  position: relative;
 }
 .button {
   background: $color-3;

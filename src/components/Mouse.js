@@ -13,8 +13,6 @@ class Mouse extends Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener('mousemove', this.handleCursor);
-
     document.querySelectorAll("body a").forEach(link => {
       link.removeEventListener('click', this.handleLeave);
       

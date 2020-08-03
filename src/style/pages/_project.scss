@@ -1,4 +1,7 @@
 .project {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
 
   &:after {
     content: "";
@@ -15,12 +18,20 @@
   .navigation {
     top: 5px;
     left: 60%;
-    font-size: 0.95rem;
-    line-height: 18px;
+    font-size: 1.1rem;
+    line-height: 20px;
+    transform: translateY(-100%);
+    animation: navProject 1s ease forwards;
+  
+    @keyframes navProject {
+      to {
+        transform: translateY(0);
+      }
+    }
 
     &:before {
       left: -120px;
-      top: -240px;
+      top: -250px;
     }
 
     .nav-projects {
@@ -32,6 +43,14 @@
     top: 10px;
     left: 50%;
     transform: translateX(-50%);
+    transform: scale(0);
+    animation: logoProject 2s ease forwards;
+  
+    @keyframes logoProject {
+      to {
+        transform: scale(1);
+      }
+    }
   }
   .project-main {
     margin: 8rem 1rem 0;
@@ -48,11 +67,32 @@
         margin-bottom: 12px;
         font-family: $font-2;
         color: $color-2;
+        transform: scaleX(0);
+        animation: transformTitle 1.5s ease forwards;
+        transform-origin: 150%;
+
+        @keyframes transformTitle {
+          to {
+            transform: scaleX(1);
+          }
+        }
       }
       p {
         margin-bottom: 30px;
         color: $color-4;
         font-size: 1.2rem;
+        
+        &:after {
+          content: "";
+          height: 340px;
+          width: 340px;
+          background: $color-3;
+          border-radius: 50%;
+          position: absolute;
+          top: -28px;
+          left: 70px;
+          z-index: -10;
+        }
       }
       li {
         font-size: 1.5rem;
@@ -62,18 +102,6 @@
       position: relative;
       text-align: left;
       margin-left: 10px;
-
-      &:after {
-        content: "";
-        height: 340px;
-        width: 340px;
-        background: $color-3;
-        border-radius: 50%;
-        position: absolute;
-        top: -42px;
-        left: -310px;
-        z-index: -1;
-      }
 
       .img-container {
         border-radius: 5px;
@@ -115,7 +143,7 @@
           line-height: 34px;
           font-size: 1.5rem;
           visibility: hidden;
-          transition: .5s ease;
+          transition: 0.5s ease;
           transform: translateY(200px);
 
           h3 {
@@ -126,17 +154,20 @@
       }
     }
   }
-  a {
-    .button {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: $color-1;
-      background: $color-2;
+  .button-container {
+    width: 130px;
+    a {
+      .button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-1;
+        background: $color-2;
 
-      &:hover {
-        color: $color-2;
-        background: $color-3;
+        &:hover {
+          color: $color-2;
+          background: $color-3;
+        }
       }
     }
   }
@@ -147,7 +178,7 @@
     background: $color-3;
     border-radius: 50%;
     z-index: -1;
-    animation: circleAnim 20s infinite alternate;
+    animation: circleAnim 16s infinite alternate;
 
     @keyframes circleAnim {
       50% {

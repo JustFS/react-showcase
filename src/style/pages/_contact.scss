@@ -1,4 +1,8 @@
 .contact {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+
   &:after {
     content: "";
     height: 700px;
@@ -9,7 +13,7 @@
     top: 150px;
     right: -460px;
     z-index: -10;
-    animation: contactAnim 30s alternate infinite;
+    animation: contactAnim 25s alternate infinite;
 
     @keyframes contactAnim {
       50% {
