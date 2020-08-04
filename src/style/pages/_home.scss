@@ -12,8 +12,14 @@
     position: absolute;
     bottom: -480px;
     right: 0px;
-    z-index: -1;
+    z-index: -2;
     animation: homeAnim 26s infinite alternate;
+
+    @media screen and (max-width: 650px){
+      height: 400px;
+      width: 400px;
+      bottom: -270px;
+    }
 
     @keyframes homeAnim {
       50% {
@@ -39,6 +45,10 @@
         position: relative;
         font-family: $font-2;
 
+        @media screen and (max-width: 650px){
+          font-size: 2rem;
+        }
+
         &:before {
           content: '';
           position: absolute;
@@ -52,6 +62,13 @@
           animation: h1Anim 1.5s forwards ease;
           transform: scale(0);
 
+          @media screen and (max-width: 850px){
+            height: 110px;
+            width: 110px;
+            left: -40px;
+            top: -15px;
+          }
+
           @keyframes h1Anim {
             to {
               transform: scale(1);
@@ -63,6 +80,9 @@
         font-size: 3.5rem;
         font-weight: 100;
 
+        @media screen and (max-width: 650px){
+          font-size: 2rem;
+        }
       }
     }
   }

@@ -15,6 +15,13 @@
     z-index: -10;
     animation: contactAnim 25s alternate infinite;
 
+    @media screen and (max-width: 840px){
+      height: 400px;
+      width: 400px;
+      top: 520px;
+      right: -140px;
+    }
+
     @keyframes contactAnim {
       50% {
         transform: scale(1.4);
@@ -24,16 +31,28 @@
       }
     }
   }
+  .navigation {
+    @media screen and (max-width: 440px){
+     display: none;
+    }
+  }
   .logo {
     top: 8px;
     right: 1rem;
   }
 
   .contact-form {
-    margin: 17% 0 0 17%;
+    margin: 7% 0 0 24%;
     max-width: 50%;
     position: relative;
     max-width: 350px;
+
+    @media screen and (max-width: 740px){
+      margin: 2rem 0 0 30%;
+    }
+    @media screen and (max-width: 440px){
+      margin-left: 2rem;
+    }
 
     h2 {
       margin-bottom: 20px;
@@ -65,11 +84,20 @@
       input {
         padding: 24px 0 12px;
         width: 100%;
+
+        @media screen and (max-width: 540px){
+          width: 75%;
+          padding: 12px 0 6px;
+        }
       }
       .email-content {
         position: relative;
         width: 100%;
         border-bottom: 1px solid $color-2;
+
+        @media screen and (max-width: 540px){
+          width: 75%;
+        }
 
         #not-mail {
           display: none;
@@ -121,6 +149,11 @@
       textarea {
         resize: none;
         padding: 24px 0;
+
+        @media screen and (max-width: 540px){
+          width: 75%;
+          padding: 12px 0;
+        }
       }
     }
     .error::placeholder {
@@ -147,6 +180,26 @@
     width: 30%;
     max-width: 500px;
 
+    @media screen and (max-width: 740px){
+      height: 200px;
+      width: 100%;
+      max-width: 100%;
+      grid-template-rows: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-areas: 
+        'a b c'
+        'd d d'
+        'e e f';
+    }
+    @media screen and (max-width: 540px){
+      grid-template-rows: repeat(3, 60px);
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-areas: 
+        'b b b c c c'
+        'd d d d d d'
+        'e e e e f f';
+    }
+
     h4 {
       color: $color-4;
       font-size: 1.3rem;
@@ -165,6 +218,10 @@
     .address {
       position: relative;
 
+      @media screen and (max-width: 540px){
+       display: none;
+      }
+
       .content {
         position: absolute;
         right: 10px;
@@ -172,17 +229,40 @@
     }
     .phone {
       position: relative;
+      grid-area: b;
+
+      @media screen and (max-width: 540px){
+        text-align: center;
+        font-size: .8rem;
+      }
 
       .content {
         position: absolute;
         left: 40%;
         transform: translateX(-50%);
+
+        @media screen and (max-width: 540px){
+          position: relative;
+          margin: 0 auto;
+          left: 0;
+          transform: translateX(0);
+        }
       }
+    }
+    .email {
+      grid-area: c;
+      text-align: center;
+      font-size: .8rem;
     }
     .social-network {
       position: relative;
       width: 80%;
       margin: 0 auto;
+      grid-area: d;
+
+      @media screen and (max-width: 740px){
+        width: 50%;
+      }
 
       .content {
         position: absolute;
@@ -193,6 +273,13 @@
     .credits {
       text-align: center;
       font-size: 0.9rem;
+      grid-area: f;
+
+      @media screen and (max-width: 740px){
+        transform: translateY(20px);
+        font-size: .7rem;
+        margin-right: 1rem;
+      }
     }
   }
 }

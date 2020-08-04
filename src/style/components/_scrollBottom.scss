@@ -6,7 +6,10 @@
   color: $color-4;
   font-size: 1.7rem;
   perspective: 40px;
-  user-select: none;
+
+  &:hover .sb-main {
+    pointer-events: auto;
+  }
 
   .sb-main {
     display: grid;
@@ -18,6 +21,7 @@
     transition: 0.4s;
     transform: rotateX(25deg) scaleY(0.8);
     transform-origin: bottom;
+    pointer-events: none;
 
     .left {
       grid-area: a;

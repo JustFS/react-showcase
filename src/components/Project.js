@@ -8,7 +8,7 @@ const Project = (props) => {
   const project = currentProject[props.projectNumber];
 
   // random background circle
-  let left = Math.floor(Math.random() * 200 + 600) + "px";
+  let left = Math.floor(Math.random() * 200 + 700) + "px";
   let top = Math.floor(Math.random() * 200 + 150) + "px";
   let size = "scale(" + (Math.random() + 0.7) + ")";
 
@@ -30,7 +30,7 @@ const Project = (props) => {
   };
 
   // random img pop
-  let plusMinus = Math.random() > 0.65 ? 1 : -1;
+  let plusMinus = Math.random() > 0.7 ? 1 : -1;
   let imgX = Math.random() * 400 * plusMinus;
   let imgY = Math.random() * 150 * plusMinus;
 

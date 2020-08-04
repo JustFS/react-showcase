@@ -7,6 +7,7 @@ import Mouse from "../components/Mouse";
 import { motion } from "framer-motion";
 
 const Home = () => {
+
   const variants = {
     initial: {
       opacity: 0,
@@ -38,10 +39,10 @@ const Home = () => {
         <SocialNetwork />
         <div className="home-main">
           <div className="main-content">
-            <motion.h1 drag onDragEnd   dragConstraints={{ left: -200, right: 700, top: -300, bottom: 300 }}>
+            <motion.h1 drag onDragEnd   dragConstraints={{ left: -250, right: 750, top: -200, bottom: 250 }}>
               AZ AGENCY
             </motion.h1>
-            <motion.h2 drag onDragEnd dragConstraints={{ left: -200, right: 700, top: -300, bottom: 300 }}>
+            <motion.h2 drag onDragEnd dragConstraints={{ left: -250, right: 750, top: -200, bottom: 250 }}>
               simply
               <DynamicText />
             </motion.h2>
