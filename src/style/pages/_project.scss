@@ -45,7 +45,7 @@
     }
 
     .nav-projects {
-      transform: translateX(50px);
+      transform: translateX(67px);
       padding: 0 20px;
     }
   }
@@ -87,6 +87,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        padding: 0 .5rem;
       }
 
       h1 {
@@ -251,8 +252,8 @@
   }
   .random-circle {
     position: absolute;
-    height: 300px;
-    width: 300px;
+    height: 400px;
+    width: 400px;
     background: $color-3;
     border-radius: 50%;
     z-index: -1;
@@ -260,7 +261,7 @@
 
     @keyframes circleAnim {
       50% {
-        transform: scale(1.5);
+        transform: scale(0.7);
       }
       100% {
         transform: scale(1);

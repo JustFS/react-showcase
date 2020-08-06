@@ -6,16 +6,9 @@ class Mouse extends Component {
     window.addEventListener('mousemove', this.handleCursor);
 
     // circle smaller
-    document.querySelectorAll("body a").forEach(link => {
+    document.querySelectorAll(".hover").forEach(link => {
       link.addEventListener('mouseover', this.handleHover);
       link.addEventListener('mouseleave', this.handleLeave);      
-    });
-  }
-
-  componentWillUnmount() {
-    document.querySelectorAll("body a").forEach(link => {
-      link.removeEventListener('click', this.handleLeave);
-      
     });
   }
   handleCursor(e) {

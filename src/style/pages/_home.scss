@@ -41,12 +41,15 @@
       user-select: none;
 
       h1 {
-        font-size: 3.3rem;
+        font-size: 3.7rem;
         position: relative;
         font-family: $font-2;
 
         @media screen and (max-width: 650px){
           font-size: 2rem;
+        }
+        @media screen and (min-width: 1200px){
+          font-size: 5rem;
         }
 
         &:before {
@@ -77,11 +80,14 @@
         }
       }
       h2 {
-        font-size: 3.5rem;
+        font-size: 4.2rem;
         font-weight: 100;
 
         @media screen and (max-width: 650px){
           font-size: 2rem;
+        }
+        @media screen and (min-width: 1200px){
+          font-size: 5rem;
         }
       }
     }

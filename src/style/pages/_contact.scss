@@ -53,7 +53,6 @@
     @media screen and (max-width: 440px){
       margin-left: 2rem;
     }
-
     h2 {
       margin-bottom: 20px;
 
@@ -80,6 +79,10 @@
         font-family: $font-1;
         font-size: 1.2rem;
         border-bottom: 1px solid $color-2;
+
+        @media screen and (min-width: 1200px){
+          font-size: 1.5rem;
+        }
       }
       input {
         padding: 24px 0 12px;
@@ -199,29 +202,44 @@
         'd d d d d d'
         'e e e e f f';
     }
+    @media screen and (max-height: 500px){
+      display: none;
+    }
+    @media screen and (min-width: 1200px){
+      width: 35%;
+      height: 83%;
+    }
 
     h4 {
       color: $color-4;
       font-size: 1.3rem;
       font-weight: 200;
       margin-bottom: 10px;
-    }
-    .clipboard {
-      cursor: pointer;
-      transition: 0.3s;
 
-      &:hover {
-        transform: translateX(4px);
+      @media screen and (min-width: 1200px){
+        font-size: 1.8rem;
       }
     }
+    p {
+      @media screen and (min-width: 1200px){
+        font-size: 1.5rem;
+      }
+    }
+    .email .content p,
+    .phone .content p {
+      transition: 0.25s;
 
+      &:hover {
+        transform: translateX(5px);
+      }
+    }
+    
     .address {
       position: relative;
 
       @media screen and (max-width: 540px){
        display: none;
       }
-
       .content {
         position: absolute;
         right: 10px;
@@ -229,11 +247,11 @@
     }
     .phone {
       position: relative;
-      grid-area: b;
 
       @media screen and (max-width: 540px){
         text-align: center;
         font-size: .8rem;
+        grid-area: b;
       }
 
       .content {
@@ -250,18 +268,23 @@
       }
     }
     .email {
-      grid-area: c;
-      text-align: center;
-      font-size: .8rem;
+      @media screen and (max-width: 540px){
+        grid-area: c;
+        font-size: .8rem;
+        text-align: center;
+      }
     }
     .social-network {
       position: relative;
       width: 80%;
       margin: 0 auto;
-      grid-area: d;
 
       @media screen and (max-width: 740px){
         width: 50%;
+        grid-area: d;
+      }
+      @media screen and (min-width: 1200px){
+        font-size: 2rem;
       }
 
       .content {
@@ -272,13 +295,15 @@
     }
     .credits {
       text-align: center;
-      font-size: 0.9rem;
-      grid-area: f;
 
       @media screen and (max-width: 740px){
         transform: translateY(20px);
         font-size: .7rem;
         margin-right: 1rem;
+        grid-area: f;
+      }
+      p {
+        font-size: 0.9rem;
       }
     }
   }

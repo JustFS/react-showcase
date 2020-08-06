@@ -30,7 +30,7 @@ const Project = (props) => {
   };
 
   // random img pop
-  let plusMinus = Math.random() > 0.7 ? 1 : -1;
+  let plusMinus = Math.random() > 0.6 ? 1 : -1;
   let imgX = Math.random() * 400 * plusMinus;
   let imgY = Math.random() * 150 * plusMinus;
 
@@ -77,7 +77,7 @@ const Project = (props) => {
         variants={imgAnim}
         transition={{duration: 1.2}}
       >
-        <div className="img-container">
+        <div className="img-container hover">
           <span>
             <h3>{project.title}</h3>
             <p>{project.infos}</p>
@@ -85,15 +85,12 @@ const Project = (props) => {
           <img src={project.img} alt={project.title} className="img" />
         </div>
         <div className="button-container">
-          <a href={project.link} target="_blank" rel="noopener noreferrer">
+          <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover">
             <span className="button">voir le site</span>
           </a>
         </div>
       </motion.div>
-      <span
-        className="random-circle"
-        style={{ left: left, top: top, transform: size }}
-      ></span>
+      <span className="random-circle" style={{ left: left, top: top, transform: size }}></span>
     </motion.div>
   );
 };

@@ -50,8 +50,9 @@ const Contact = () => {
           <div className="phone">
             <div className="content">
               <h4>téléphone</h4>
-              <CopyToClipboard text="0642844284">
+              <CopyToClipboard text="0642844284" className="hover">
                 <p
+                  style={{cursor: 'pointer'}}
                   className="clipboard"
                   onClick={() => {
                     alert("Téléphone copié !");
@@ -65,8 +66,9 @@ const Contact = () => {
           <div className="email">
             <div className="content">
               <h4>email</h4>
-              <CopyToClipboard text="azagency@gmail.com">
+              <CopyToClipboard text="azagency@gmail.com" className="hover">
                 <p
+                  style={{cursor: 'pointer'}}
                   className="clipboard"
                   onClick={() => {
                     alert("Email copié !");

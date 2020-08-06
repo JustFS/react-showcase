@@ -153,7 +153,7 @@ export default class extends Component {
             value={this.state.message}
           />
         </div>
-        <input className="button" type="button" value="envoyer" onClick={this.handleSubmit.bind(this)} />
+        <input className="button hover" type="button" value="envoyer" onClick={this.handleSubmit.bind(this)} />
         <div className="form-message"></div>
       </form>
     );
