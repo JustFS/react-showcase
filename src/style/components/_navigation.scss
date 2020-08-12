@@ -26,6 +26,10 @@
         transform: scale(1);
       }
     }
+    @media screen and (max-width: 430px){
+      height: 50px;
+      width: 50px;
+    }
   }
   .nav-active {
     color: $black;

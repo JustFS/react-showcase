@@ -21,6 +21,9 @@
       top: 520px;
       right: -140px;
     }
+    @media screen and (max-width: 430px){
+      display: none;
+    }
 
     @keyframes contactAnim {
       50% {
@@ -223,6 +226,12 @@
     p {
       @media screen and (min-width: 1200px){
         font-size: 1.5rem;
+      }
+    }
+    .email,
+    .phone {
+      @media screen and (max-height: 640px){
+        display: none;
       }
     }
     .email .content p,

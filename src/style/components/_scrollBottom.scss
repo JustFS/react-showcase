@@ -23,11 +23,25 @@
     transform-origin: bottom;
     pointer-events: none;
 
+    @media screen and (max-width: 430px){
+      transform: rotateX(0deg) scaleY(1);
+      width: 50px;
+    }
+    .left,
+    .right {
+      @media screen and (max-width: 430px){
+        transform: scale(2);
+      }
+    }
     .left {
       grid-area: a;
     }
     p {
       grid-area: b;
+
+      @media screen and (max-width: 430px){
+        display: none;
+      }
     }
     .right {
       grid-area: c;

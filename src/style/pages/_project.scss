@@ -19,6 +19,10 @@
       width: 200px;
       bottom: -110px;
     }
+    @media screen and (max-width: 430px){
+      // display: none;
+      left : -500px;
+    }
   }
 
   .navigation {
@@ -266,6 +270,10 @@
       100% {
         transform: scale(1);
       }
+    }
+    
+    @media screen and (max-width: 630px){
+      display: none;
     }
   }
 }
