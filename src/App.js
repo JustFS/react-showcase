@@ -15,6 +15,7 @@ const App = () => {
 
   useEffect(() => {
     const handleScrollToElement = (e) => {
+      console.log('scroll');
       const url = window.location.origin + "/";
 
       const wheelRouter = (after, before) => {
@@ -34,7 +35,7 @@ const App = () => {
           if (e.wheelDeltaY < 0) {
             setTimeout(() => {
               history.push("projet-1");
-            }, 350);
+            }, 800);
           }
           break;
         case url + "projet-1":

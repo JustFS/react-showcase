@@ -1,26 +1,53 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const DynamicText = () => {
-  // const [word, setNewWord] = useState(["smart"]);
+  let array = ["simple", "clear", "smart", "strong"];
+  let wordIndex = 0;
+  let letterIndex = 0;
 
-  // let words = ["simple", "clever", "strong", "smart"];
-  // let index = 0;
+  useEffect(() => {
+    const target = document.getElementById("text-target");
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setNewWord(words[index]);
-  //     index < words.length - 1 ? index++ : (index = 0);
-  //   }, 2000);
+    const createLetter = () => {
+      const letter = document.createElement("span");
+      target.appendChild(letter);
 
-  //   return () => clearInterval(interval);
-  // }, []);
+      letter.classList.add("letter");
+      letter.style.opacity = "0";
+      letter.style.animation = "anim 5s ease forwards";
+      letter.textContent = array[wordIndex][letterIndex];
+
+      setTimeout(() => {
+        letter.remove();
+      }, 2000);
+    };
+
+    const loop = () => {
+      setTimeout(() => {
+        if (wordIndex >= array.length) {
+          wordIndex = 0;
+          letterIndex = 0;
+          loop();
+        } else if (letterIndex < array[wordIndex].length) {
+          createLetter();
+          letterIndex++;
+          loop();
+        } else {
+          letterIndex = 0;
+          wordIndex++;
+          setTimeout(() => {
+            loop();
+          }, 2000);
+        }
+      }, 80);
+    };
+    loop();
+  }, []);
 
   return (
     <span className="dynamic-text">
-      <span>simple</span>
-      <span>clever</span>
-      <span>strong</span>
-      <span>smart</span>
+      <span>simply</span>
+      <span id="text-target"></span>
     </span>
   );
 };

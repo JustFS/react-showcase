@@ -1,45 +1,40 @@
 .dynamic-text {
   position: relative;
-  animation: color 50s infinite alternate;
+  display: flex;
 
-  span {
+  #text-target {
+    display: flex;
+    width: 300px;
+    text-align: left;
+    animation: color 30s alternate infinite;
+    perspective: 200px;
+    transform: translateX(26px);
+  }
+  .word {
     position: absolute;
-    left: 1rem;
-    transform: translateY(20px);
-    opacity: 0;
-
-    @mixin word ($delay) {
-      animation: animWord 16s infinite;
-      animation-delay: $delay;
-      @keyframes animWord {
-        25% {
-          transform: translateY(0);
-          opacity: 1;
-        }
-        32% {
-          transform: translateY(-20px);
-          opacity: 0;
-        }
-      } 
+  }
+  @keyframes color {
+    0% {
+      color: blue;
     }
-
-    &:nth-child(1){
-      @include word(0s);
+    50% {
+      color: #ec006e;
     }
-    &:nth-child(2){
-      @include word(4s);
-    }
-    &:nth-child(3){
-      @include word(8s);
-    }
-    &:nth-child(4){
-      @include word(12s);
+    100% {
+      color: blue;
     }
   }
-}
-
-@keyframes color {
-  0% {color: $color-2;}
-  50% {color: #ec006e;}
-  100% {color: $color-2;}
+  .letter {
+    transform: translateZ(200px);
+  }
+  @keyframes anim {
+    25% {
+      transform: translateZ(0px);
+      opacity: 1;
+    }
+    32% {
+      opacity: 0;
+      transform: translateZ(-280px) translateX(200px);
+    }
+  }
 }
