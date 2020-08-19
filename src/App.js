@@ -15,18 +15,18 @@ const App = () => {
 
   useEffect(() => {
     const handleScrollToElement = (e) => {
-      console.log('scroll');
+      console.log(e.wheelDeltaY);
       const url = window.location.origin + "/";
 
       const wheelRouter = (after, before) => {
         if (e.wheelDeltaY < 0) {
           setTimeout(() => {
             history.push(after);
-          }, 350);
-        } else {
+          }, 500);
+        } else if (e.wheelDeltaY > 0) {
           setTimeout(() => {
             history.push(before);
-          }, 350);
+          }, 500);
         }
       };
 
@@ -35,7 +35,7 @@ const App = () => {
           if (e.wheelDeltaY < 0) {
             setTimeout(() => {
               history.push("projet-1");
-            }, 800);
+            }, 500);
           }
           break;
         case url + "projet-1":
@@ -54,7 +54,7 @@ const App = () => {
           if (e.wheelDeltaY > 0) {
             setTimeout(() => {
               history.push("projet-4");
-            }, 350);
+            }, 500);
           }
           break;
         default:

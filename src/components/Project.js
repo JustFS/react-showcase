@@ -15,7 +15,7 @@ const Project = (props) => {
   const variants = {
     initial: {
       opacity: 0,
-      transition: { duration: 0.4 },
+      transition: { duration: 0.5 },
       x: 200,
     },
     visible: { 
@@ -24,15 +24,15 @@ const Project = (props) => {
     },
     exit: {
       opacity: 0.4,
-      transition: { duration: 0.25 },
-      x: -1000,
+      transition: { duration: 0.35 },
+      x: -800,
     }
   };
 
   // random img pop
-  let plusMinus = Math.random() > 0.6 ? 1 : -1;
-  let imgX = Math.random() * 400 * plusMinus;
-  let imgY = Math.random() * 150 * plusMinus;
+  let plusMinus = Math.random() > 0.4 ? 1 : -1;
+  let imgX = Math.random() * 350 * plusMinus;
+  let imgY = Math.random() * 120 * plusMinus;
 
   const imgAnim = {
     initial: {
@@ -90,7 +90,7 @@ const Project = (props) => {
           </a>
         </div>
       </motion.div>
-      <span className="random-circle" style={{ left: left, top: top, transform: size }}></span>
+      <span className="random-circle" style={{ left, top, transform: size }}></span>
     </motion.div>
   );
 };

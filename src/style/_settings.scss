@@ -31,6 +31,9 @@ $red: rgb(253, 87, 87);
     background: $color-2;
   }
 }
+html { 
+  scroll-behavior: unset;
+}
 a,
 a:visited {
   color: $color-4;
