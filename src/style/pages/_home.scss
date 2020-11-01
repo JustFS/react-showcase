@@ -5,15 +5,15 @@
 
   &:after {
     content: '';
-    height: 800px;
-    width: 800px;
+    height: 900px;
+    width: 900px;
     background: $color-3;
     border-radius: 50%;
     position: absolute;
     bottom: -480px;
     right: 0px;
     z-index: -2;
-    animation: homeAnim 26s infinite alternate;
+    animation: homeAnim 15s infinite alternate;
 
     @media screen and (max-width: 650px){
       height: 400px;
@@ -38,7 +38,10 @@
     display: grid;
     align-items: center;
     justify-items: center;
+    padding-left: 1rem;
+    width: auto;
     height: 95%;
+    overflow: hidden;
 
     .main-content {
       user-select: none;
@@ -47,6 +50,7 @@
         font-size: 3.7rem;
         position: relative;
         font-family: $font-2;
+        color: $black;
 
         @media screen and (max-width: 650px){
           font-size: 2rem;

@@ -1,12 +1,8 @@
 import React, { useEffect } from "react";
-import { Switch, Route, useLocation, useHistory } from "react-router-dom";
+import { Switch, Route, useLocation, useHistory, Redirect } from "react-router-dom";
 import Home from "./pages/Home";
-import Project1 from "./pages/Project1";
-import Project2 from "./pages/Project2";
-import Project3 from "./pages/Project3";
-import Project4 from "./pages/Project4";
+import {Project1, Project2, Project3, Project4} from "./pages/Projects";
 import Contact from "./pages/Contact";
-import NotFound from "./pages/NotFound";
 import { AnimatePresence } from "framer-motion";
 
 const App = () => {
@@ -73,7 +69,7 @@ const App = () => {
         <Route path="/projet-3" component={Project3} />
         <Route path="/projet-4" component={Project4} />
         <Route path="/contact" component={Contact} />
-        <Route component={NotFound} />
+        <Redirect to='/' />
       </Switch>
     </AnimatePresence>
   );

@@ -2,6 +2,10 @@
   position: relative;
   display: flex;
 
+  .simply {
+    color: $color-4;
+  }
+
   #text-target {
     display: flex;
     width: 300px;
@@ -15,13 +19,13 @@
   }
   @keyframes color {
     0% {
-      color: blue;
+      color: $color-2;
     }
     50% {
-      color: #ec006e;
+      color: $color-4;
     }
     100% {
-      color: blue;
+      color: $color-2;
     }
   }
   .letter {
